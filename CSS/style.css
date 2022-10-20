@@ -1,0 +1,92 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+/* font-family: 'Montserrat', sans-serif; */
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
+h1{
+  font-weight: 700;
+}
+h2{
+  font-weight: 500;
+}
+h3,h4{
+  font-weight: 400;
+}
+h5,h6{
+  font-weight: 300;
+}
+
+
+
+
+
+.results ul {margin: 0; padding: 0; }
+.results ul li {
+  list-style: none;
+  border-radius: 3px;
+  opacity: 0;
+  display: none;
+  padding: 8px 12px;
+  transition: all .5s linear;
+}
+
+.show .results ul li {
+  opacity: 1;
+  display: block;
+}
+
+.show .results {
+  padding: 10px;
+}
+
+.results ul li:hover {
+  background: #ececec
+}
+
+
+
+
+
+/* cards style */
+.custom-card {
+    width: 400px;
+}
+
+.custom-container {
+    display: list-item;
+    background: white;
+    width: 400px;
+    position: absolute;
+    top: 100px;
+}
+
+
+
+.card{
+    height: 35px;
+    width: 400px;
+    margin:5px 0 5px 0;
+    justify-content: center;
+}
+.card-body{
+    display: inline-flex;
+}
+.card-name, .card-icon-name{
+    color: black;
+    font-size: 15px;
+}
+.card-icon{
+
+    height: 20px;
+    color: black;
+}
+
+.spinner{
+display: none;
+margin-left: 20px;
+
+}
