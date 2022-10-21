@@ -28,7 +28,7 @@ h5,h6{
   border-radius: 15px;
   /* vertical-align: middle; */
   align-items: center;
-
+  display: none;
 }
 
 

@@ -1,29 +1,29 @@
 import {companyData,companyStockHistory,NASDAQSymbolList,tenSearchResults} from './data.js'
+
 // console.log("tenSearchResults",await tenSearchResults("aa"));
 // console.log("companyData",await companyData("aapl"));
 // console.log("companyStockHistory",await companyStockHistory("aapl"));
 // console.log("NASDAQSymbolList",await NASDAQSymbolList());
 // const loadingIcon = `
+const iFraemCardSrc=document.getElementById('companyIframe')
+export  function spinnerOn() {
+  document.getElementById("spinner").style.display = "contents"; 
+ }
 
-function spinnerOn() {
- document.getElementById("spinner").style.display = "contents"; 
-}
+export  function spinnerOff() {
+     document.getElementById("spinner").style.display = "none"; 
+    }
 
-function spinnerOff() {
-    document.getElementById("spinner").style.display = "none"; 
-   }
    spinnerOff()
-class Stock {
+  class Stock {
     constructor(stockObject) {
       this.symbol = stockObject.symbol;
       this.name = stockObject.name;
       this.stockExchange = stockObject.stockExchange;
     }
-    cardIframeImportHTML(){
-      const iFraemCardSrc=document.getElementById('companyIframe')
-      console.log("iFraemCardSrc",iFraemCardSrc);
+    async cardIframeImportHTML(){
+      iFraemCardSrc.style.display = "block"
       iFraemCardSrc.src = "http://127.0.0.1:5501//company.html?symbol="+this.symbol;
-     console.log(iFraemCardSrc.src);
     }
     createStockCard() {
 
@@ -49,7 +49,11 @@ class Stock {
       cardDiv.appendChild(bodyDiv);
       
       cardDiv.addEventListener("click",() =>{
+
+        // iFraemCardSrc.style.display = "none"
         this.cardIframeImportHTML()
+
+
       })
     
       return cardDiv ;
