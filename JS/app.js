@@ -19,7 +19,12 @@ class Stock {
       this.name = stockObject.name;
       this.stockExchange = stockObject.stockExchange;
     }
-
+    cardIframeImportHTML(){
+      const iFraemCardSrc=document.getElementById('companyIframe')
+      console.log("iFraemCardSrc",iFraemCardSrc);
+      iFraemCardSrc.src = "http://127.0.0.1:5501//company.html?symbol="+this.symbol;
+     console.log(iFraemCardSrc.src);
+    }
     createStockCard() {
 
       const cardDiv = document.createElement("li");
@@ -44,7 +49,7 @@ class Stock {
       cardDiv.appendChild(bodyDiv);
       
       cardDiv.addEventListener("click",() =>{
-        this.cardClick()
+        this.cardIframeImportHTML()
       })
     
       return cardDiv ;
