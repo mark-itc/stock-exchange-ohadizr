@@ -1,7 +1,12 @@
 import {companyData,companyStockHistory,NASDAQSymbolList,tenSearchResults,stockPirce} from './data.js'
 
+export function hello() {
+    console.log("hello");
+  }
 
-export class Marquee{
+//   hello()
+
+export class MarqueeLine{
     constructor(apiCompanyData){
         this.symbol=apiCompanyData.symbol
         this.price=apiCompanyData.price
@@ -34,7 +39,7 @@ let domIdmarqueeStock =document.getElementById("marquee")
 splicedSymbolList.forEach(async (item) => {
     const apiCompanyData= await stockPirce(item)
 
-    const marquee = new Marquee(apiCompanyData[0]);
+    const marquee = new MarqueeLine(apiCompanyData[0]);
     symbolListWithPrice.push(marquee);
     const compnayLine=marquee.createMarqueeLine() 
 
@@ -42,3 +47,14 @@ splicedSymbolList.forEach(async (item) => {
 
    
   });
+
+
+
+
+
+export class Marquee{
+    constructor(){
+    this.name= "name"
+    }
+}
+//   module.exports = Marquee

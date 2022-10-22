@@ -9,6 +9,8 @@ export  function spinnerOff() {
      document.getElementById("spinner").style.display = "none"; 
     }
 
+
+
    spinnerOff()
   class Stock {
     constructor(stockObject,apiCompanyData) {
@@ -122,6 +124,7 @@ export class GetStockData {
 window.onload = async () => {
    let getStockData = new GetStockData();
 
+   
   //  body.addEventListener("click", (e) => {
   //   stockContainer.style.display = "none"; 
   // })
@@ -129,9 +132,5 @@ window.onload = async () => {
 
 
 
-
-// class SearchForm(){
-
-// }
 
 
