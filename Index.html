@@ -10,66 +10,59 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
 
   <title>Stock API </title>
 </head>
 
 <body>
-  <header class="p-3 text-bg-dark">
+  <marquee id="marquee"></marquee>
+
+  <header id="originalIndexHeader" class="p-3 text-bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-        </a>
 
         <ul class="nav  d-flex flex-nowrap ">
-
-
           <li>
             <form class="d-flex" id="search-form" role="search">
-                
+
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input"
                 autocomplete="off">
               <div class="wrapper">
 
-                <div class="results">
-                  <ul>
-                  </ul>
-                </div>
-              </div>
 
-              <button class="btn btn-outline-success" type="submit">Search</button>
-      
+
+                <button class="btn btn-outline-success" type="submit">Search</button>
+
             </form>
- 
+
           </li>
           <li>
-            <div class="text-center "id="spinner">
-                <div class="spinner-border" role="status">
-                </div>
+            <div class="text-center " id="spinner">
+              <div class="spinner-border" role="status">
               </div>
+            </div>
           </li>
         </ul>
         <ul class="container custom-container" id="stock-container">
-      </div>
-    </div>
-    </ul>
+
+        </ul>
 
 
-    <!-- list of results -->
-    <div id="tenResults">
-      <ul></ul>
-    </div>
 
+        <div id="results">
 
-  </header>
-  <iframe id="companyIframe" src="" width="750" height="780"> </iframe>
+        </div>
+      </header>
+        <iframe id="companyIframe" src="" width="650px" height="400px"> </iframe>
+        <script type="module" src="JS/app.js"></script>
+        <script type="module" src="JS/marquee.js"></script>
+        <script type="module" src="./JS/marquee.js"></script>
+        <!-- <script type="module" src="./JS/searchResult.js"></script> -->
+        <script type="module" src="./JS/searchForm.js"></script>
 
-  <script type="module" src="JS/app.js"></script>
 </body>
 
 </html>
