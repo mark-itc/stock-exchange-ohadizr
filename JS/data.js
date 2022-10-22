@@ -50,3 +50,14 @@ export async function NASDAQSymbolList() {
     return error;
   }
 }
+
+export async function stockPirce(symbol) {
+  try {
+    let url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quote-short/${symbol}`;
+    const response = await fetch(url);
+    const results = await response.json();
+    return results;
+  } catch (error) {
+    return error;
+  }
+}

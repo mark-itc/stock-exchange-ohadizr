@@ -23,12 +23,17 @@ h5,h6{
 
 
 #companyIframe{
-  margin: 5% 30% 0 30%;
-  box-shadow: 0px 12px 40px rgba(0,0,0,0.5);
+
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.217);
   border-radius: 15px;
   /* vertical-align: middle; */
   align-items: center;
   display: none;
+  position:absolute;
+  left: 450px;
+  top: 100px;
+
+  margin: 1%;
 }
 
 
@@ -43,6 +48,9 @@ h5,h6{
     width: 400px;
     position: absolute;
     top: 100px;
+    left: 0px;
+
+    
 }
 
 
@@ -54,16 +62,43 @@ h5,h6{
     justify-content: center;
 }
 .card-body{
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 50px 230px 30px 70px;
+    grid-template-rows: 35px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border: 2px ;
+    border-radius: 0%;
 }
-.card-name, .card-icon-name{
-    color: black;
+.card-name {
+    color: rgba(66, 122, 218, 0.702);
     font-size: 15px;
+    font-weight: 600;
+    grid-area: 1 / 2 / 2 / 3; 
+    padding: 2%;
+    align-items: center;
+}
+.card-symbol-name{
+  color: black;
+  font-size: 10px;
+
+  grid-area: 1 / 3 / 2 / 4; 
 }
 .card-icon{
 
-    height: 20px;
+    height: 30px;
     color: black;
+    grid-area: 1 / 1 / 2 / 2;
+}
+.card-icon-changesPercentage-red{
+  color: red;
+   grid-area: 1 / 4 / 2 / 5; 
+   font-size: 10px;
+}
+.card-icon-changesPercentage-green{
+  color: green;
+  grid-area: 1 / 4 / 2 / 5; 
+  font-size: 10px;
 }
 
 .spinner{
@@ -75,16 +110,15 @@ margin-left: 20px;
 
 /* canva and company card */
 #companyContainer{
-  width: 500px;
-  height: 500px;
   display: grid;
-  grid-template-columns: repeat(10, 65px);
-  grid-template-rows: repeat(10, 65px);
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(10, 40px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   width: 650px;
-  height: 650px;
-  margin: 6%;
+  height: 400px;
+  padding: 6%;
+  
 }
 
 #companyOverView{
@@ -100,6 +134,12 @@ align-items: start;
 #companyStockPrice{
   grid-area: 2 / 2 / 3 / 10; 
   display: flex;
+  font-size: 12px;
+  
+}
+#companyStockPrice h6{
+  font-size: 12px;
+  padding: 1%;
 }
 #companyStockDescription{
   grid-area: 3 / 2 / 4 / 10; 
@@ -113,6 +153,7 @@ align-items: start;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  font-size: 12px;
 }
 
 #canvas{
@@ -121,3 +162,29 @@ align-items: start;
 }
 
 
+#merquee{
+  display: flex;
+  width: 98vw;
+  height:  30px;
+  align-items: center;
+}
+#marquee h6{
+  font-size: 15px;
+  
+}
+.marqueeCompany{
+  display: inline;
+}
+
+.custom-line{
+  display: inline-flex;
+  width: fit-content;
+  vertical-align: center;
+  padding-left: 10px;
+  
+}
+
+.line-price{
+  color: green;
+  padding-left: 2px;
+}

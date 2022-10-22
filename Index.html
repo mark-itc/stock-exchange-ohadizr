@@ -10,77 +10,61 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
 
   <title>Stock API </title>
 </head>
 
 <body>
+  <marquee id="marquee"></marquee>
+  </header>
   <header class="p-3 text-bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-        </a>
 
         <ul class="nav  d-flex flex-nowrap ">
-
-
           <li>
             <form class="d-flex" id="search-form" role="search">
-                
+
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input"
                 autocomplete="off">
               <div class="wrapper">
 
 
 
-              <button class="btn btn-outline-success" type="submit">Search</button>
-      
+                <button class="btn btn-outline-success" type="submit">Search</button>
+
             </form>
- 
+
           </li>
           <li>
-            <div class="text-center "id="spinner">
-                <div class="spinner-border" role="status">
-                </div>
+            <div class="text-center " id="spinner">
+              <div class="spinner-border" role="status">
               </div>
+            </div>
           </li>
         </ul>
         <ul class="container custom-container" id="stock-container">
-      </div>
-    </div>
-    </ul>
 
-
-    <!-- list of results -->
-    <div id="tenResults">
-      <ul></ul>
-    </div>
-
-
-  </header>
-
-  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      <span  class="fs-5 fw-semibold"></span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <div id="results">
-        <ul>
         </ul>
-      </div>
-    </div>
-    </ul>
-  </div>
 
-  <iframe id="companyIframe" src="" width="750" height="780"> </iframe>
-  <script type="module" src="JS/activeSearch.js"></script>
-  <script type="module" src="JS/app.js"></script>
+
+<!-- 
+        <div id="tenResults">
+          <ul></ul>
+        </div> -->
+
+
+        <div id="results">
+
+        </div>
+
+        <iframe id="companyIframe" src="" width="650px" height="400px"> </iframe>
+        <script type="module" src="JS/app.js"></script>
+        <script type="module" src="JS/marquee.js"></script>
+
 </body>
 
 </html>
