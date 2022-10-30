@@ -14,55 +14,41 @@
     rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
 
-  <title>Stock API </title>
+  <title>Stock API 2</title>
 </head>
 
 <body>
   <marquee id="marquee"></marquee>
+  <div class=" shadow-lg p-g bg-white rounded" id="headerContainer">
+    <h2 class="text-center ">Search Nasdaq Stocks</h2>
+    <div id="form"></div>
+    <div id="results"></div>
+  </div>
+  <script src="JS/marquee.js"></script>
+  <script src="JS/searchResult.js"></script>
+  <script src="JS/searchForm.js"></script>
+  <script type="module" src="JS/marquee.js"></script>
+  <script>
 
-  <header id="originalIndexHeader" class="p-3 text-bg-dark">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    (async function () {
 
-        <ul class="nav  d-flex flex-nowrap ">
-          <li>
-            <form class="d-flex" id="search-form" role="search">
+      const marquee = new Marquee(document.getElementById('marquee'))
+      marquee.load()
 
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input"
-                autocomplete="off">
-              <div class="wrapper">
+      const form = new SearchForm(document.getElementById('form'))
+      const results = new SearchResult(document.getElementById('results'))
 
-
-
-                <button class="btn btn-outline-success" type="submit">Search</button>
-
-            </form>
-
-          </li>
-          <li>
-            <div class="text-center " id="spinner">
-              <div class="spinner-border" role="status">
-              </div>
-            </div>
-          </li>
-        </ul>
-        <ul class="container custom-container" id="stock-container">
-
-        </ul>
+      const searchForm = document.getElementById("search-form");
+      searchForm.addEventListener("click", (e) => {
+        e.preventDefault();
+        form.onSearch(results.renderResult(companies))
+      })
 
 
 
-        <div id="results">
 
-        </div>
-      </header>
-        <iframe id="companyIframe" src="" width="650px" height="400px"> </iframe>
-        <script type="module" src="JS/app.js"></script>
-        <script type="module" src="JS/marquee.js"></script>
-        <script type="module" src="./JS/marquee.js"></script>
-        <!-- <script type="module" src="./JS/searchResult.js"></script> -->
-        <script type="module" src="./JS/searchForm.js"></script>
-
+    })()
+  </script>
 </body>
 
 </html>
