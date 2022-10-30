@@ -1,0 +1,247 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h3,
+h4 {
+  font-weight: 400;
+}
+
+h5,
+h6 {
+  font-weight: 300;
+}
+
+
+
+#companyIframe {
+  top: 150px;
+  left: 550px;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.217);
+  border-radius: 15px;
+  align-items: flex-start;
+  display: none;
+  position: absolute;
+  margin: 1%;
+}
+
+
+/* cards style */
+.custom-card {
+  width: 400px;
+}
+
+.custom-container {
+  display: list-item;
+  background: white;
+  width: 530px;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  list-style-type: none;
+  border-radius: 3%;
+}
+
+
+
+.card {
+  height: 35px;
+  width: 500px;
+  margin: 5px 0 5px 0;
+  justify-content: center;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 50px 280px 40px 85px;
+  grid-template-rows: 35px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 2px;
+  border-radius: 0%;
+
+}
+
+.card-name {
+  color: rgba(66, 122, 218, 0.702);
+  font-size: 14px;
+  font-weight: 600;
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 2%;
+  align-items: center;
+}
+
+.card-symbol-name {
+  color: black;
+  font-size: 10px;
+
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.card-icon {
+
+  height: 25px;
+  color: black;
+  grid-area: 1 / 1 / 2 / 2;
+  
+}
+
+.card-icon-changesPercentage-red {
+  color: red;
+  grid-area: 1 / 4 / 2 / 5;
+  font-size: 14px;
+  
+}
+
+.card-icon-changesPercentage-green {
+  color: green;
+  grid-area: 1 / 4 / 2 / 5;
+  font-size: 14px;
+}
+
+#spinner {
+  display: none;
+  margin-left: 20px;
+
+}
+
+
+/* canva and company card */
+#companyContainer {
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(10, 40px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 650px;
+  height: 400px;
+  padding: 6%;
+
+}
+
+#companyOverView {
+  grid-area: 1 / 2 / 2 / 10;
+  display: flex;
+  vertical-align: middle;
+  align-items: start;
+}
+
+#companyOverView h4 {
+  font-size: 15px;
+}
+
+#companyOverView h5 {
+  font-size: 15px;
+}
+
+#companyOverView .companyImg {
+  width: 20px;
+}
+
+#companyStockPrice {
+  grid-area: 2 / 2 / 3 / 10;
+  display: flex;
+  font-size: 10px;
+
+}
+
+#companyStockPrice h6 {
+  font-size: 10px;
+  padding: 1%;
+}
+
+#companyStockDescription {
+  grid-area: 3 / 2 / 4 / 10;
+  width: 500px;
+
+
+
+}
+
+#companyStockDescription h6 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+}
+
+#canvas {
+  grid-area: 4 / 2 / 9 / 10;
+  align-items: center;
+}
+
+
+#merquee {
+  display: flex;
+  width: 98vw;
+  height: 30px;
+  align-items: center;
+}
+
+#marquee h6 {
+  font-size: 15px;
+
+}
+
+.marqueeCompany {
+  display: inline;
+}
+
+.custom-line {
+  display: inline-flex;
+  width: fit-content;
+  vertical-align: center;
+  padding-left: 10px;
+
+}
+
+.line-price {
+  color: green;
+  padding-left: 2px;
+}
+
+
+/* new Index */
+
+
+.container h2 {
+  margin: 0%;
+}
+
+#results {
+  top: 100px;
+  position: absolute;
+}
+
+#headerContainer {
+  margin: 1%;
+}
+
+#headerContainer h2 {
+  background-color: #212529;
+  margin: 0%;
+  color: white;
+
+}
