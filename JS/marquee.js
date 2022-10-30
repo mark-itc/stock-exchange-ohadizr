@@ -1,60 +1,72 @@
-import {companyData,companyStockHistory,NASDAQSymbolList,tenSearchResults,stockPirce} from './data.js'
 
-export function hello() {
-    console.log("hello");
+class Marquee{
+  constructor(domElement){
+  this.namdomElemente= domElement
+
+
   }
 
-//   hello()
-
-export class MarqueeLine{
-    constructor(apiCompanyData){
-        this.symbol=apiCompanyData.symbol
-        this.price=apiCompanyData.price
+  async load(){
+      async function NASDAQSymbolList() {
+      try {
+        const url =
+          "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/search?query=&exchange=NASDAQ,";
+        const response = await fetch(url);
+        const results = await response.json();
+        const symbol=[]
+        results.forEach(element => {
+          symbol.push(element.symbol)
+        });
+    
+        return symbol;
+      } catch (error) {
+        // return error;
+      }
     }
-    createMarqueeLine() {
-        const lineDiv = document.createElement("li");
-        lineDiv.classList.add("line");
-        lineDiv.classList.add("custom-line");
-  
-        const lineSymbol = document.createElement("h6");
-        lineSymbol.classList.add("line-symbol");
-        lineSymbol.innerHTML = this.symbol;
-
-        const linePrice = document.createElement("h6");
-        linePrice.classList.add("line-price");
-        linePrice.innerHTML = this.price;
-
-        lineDiv.appendChild(lineSymbol);
-        lineDiv.appendChild(linePrice);
-      
-        return lineDiv ;
+    async function stockPirce(symbol) {
+      try {
+        let url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quote-short/${symbol}`;
+        const response = await fetch(url);
+        const results = await response.json();
+        return results;
+      } catch (error) {
+        // return error;
       }
       
-}
-let symbolList= await NASDAQSymbolList()
-let splicedSymbolList=  symbolList.splice(0,120);
-let symbolListWithPrice = []
-let domIdmarqueeStock =document.getElementById("marquee")
-
-splicedSymbolList.forEach(async (item) => {
-    const apiCompanyData= await stockPirce(item)
-
-    const marquee = new MarqueeLine(apiCompanyData[0]);
-    symbolListWithPrice.push(marquee);
-    const compnayLine=marquee.createMarqueeLine() 
-
-    domIdmarqueeStock.appendChild(compnayLine)
-
-   
-  });
-
-
-
-
-
-export class Marquee{
-    constructor(){
-    this.name= "name"
     }
+    try {
+      
+    const symbolList= await NASDAQSymbolList()
+    const splicedSymbolList=  symbolList.splice(0,120);
+    splicedSymbolList.forEach(async (item) => {
+    const apiCompanysData= await stockPirce(item)
+    const symbolListWithPrice = []
+    symbolListWithPrice.push(apiCompanysData[0]);
+    symbolListWithPrice.forEach(element => {
+      try {
+        
+
+      let symbol = element.symbol
+      let price = element.price
+      this.namdomElemente.innerHTML +=(`
+        <li class="line custom-line">
+        <h6 class="line-symbol">${symbol}</h6>
+        <h6 class="line-price">${price}</h6>
+        </li>
+       `
+       )
+      } catch (error) {
+        //  console.log(error); 
+      }
+    });
+  });
+  } catch (error) {
+    //  console.log(error); 
+  }
+
+  }
 }
-//   module.exports = Marquee
+
+
+
+
